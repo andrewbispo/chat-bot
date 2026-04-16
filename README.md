@@ -141,11 +141,53 @@ Caso não entenda, ele retorna uma resposta aleatória.
 
 ## 🧪 Rodando os testes
 
-Dentro da pasta `backend`, execute:
+Os testes são feitos com **Jest** e **Supertest**, permitindo validar os endpoints da API sem precisar subir o servidor manualmente.
+
+### 📁 Localização dos testes
+
+Os arquivos de teste devem ficar dentro da pasta:
+
+```
+backend/tests/
+```
+
+E devem seguir o padrão de nome:
+
+```
+*.test.js ou *.spec.js
+```
+
+Exemplo:
+
+```
+backend/tests/chat.test.js
+```
+
+---
+
+### ▶️ Executar os testes
+
+Dentro da pasta `backend`, rode:
 
 ```bash
 npm test
 ```
+
+---
+
+### ✅ O que é testado
+
+* Envio de mensagens para o endpoint `/chat`
+* Validação de erro quando a mensagem está vazia
+* Respostas automáticas do bot
+
+---
+
+### ⚠️ Problemas comuns
+
+* **"No tests found"** → verifique se o nome do arquivo termina com `.test.js`
+* Arquivo fora da pasta `backend` → mova para `backend/tests`
+* Dependências não instaladas → rode `npm install`
 
 ---
 
