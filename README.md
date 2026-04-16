@@ -1,6 +1,6 @@
 # 🤖 Chat Bot Project
 
-Este é um projeto simples de chatbot com backend em Node.js usando Express e um frontend separado.
+Este é um projeto de chatbot com backend estruturado em camadas (MVC) usando Node.js + Express e um frontend simples.
 
 ---
 
@@ -9,13 +9,35 @@ Este é um projeto simples de chatbot com backend em Node.js usando Express e um
 ```
 chat-bot/
 ├── backend/
+│   ├── controllers/
+│   │   └── chatController.js
+│   ├── database/
+│   │   └── db.js
+│   ├── models/
+│   │   └── messageModel.js
+│   ├── routes/
+│   │   └── chatRoutes.js
 │   ├── server.js
 │   ├── package.json
-│   └── ...
+│   └── node_modules/
 ├── frontend/
-├── script.js
+│   └── index.html
 ├── tests/
+├── script.js
+└── README.md
 ```
+
+---
+
+## 🏗️ Arquitetura
+
+O backend segue uma separação de responsabilidades:
+
+* **controllers/** → lógica das requisições
+* **models/** → estrutura e manipulação de dados
+* **database/** → simulação de banco de dados
+* **routes/** → definição das rotas da API
+* **server.js** → inicialização do servidor
 
 ---
 
@@ -31,16 +53,7 @@ chat-bot/
 
 ## ⚙️ Como rodar o projeto
 
-### 1. Clone o repositório (ou use sua pasta local)
-
-```bash
-git clone <url-do-repositorio>
-cd chat-bot
-```
-
----
-
-### 2. Acesse o backend
+### 1. Acesse a pasta do backend
 
 ```bash
 cd backend
@@ -48,7 +61,7 @@ cd backend
 
 ---
 
-### 3. Instale as dependências
+### 2. Instale as dependências
 
 ```bash
 npm install
@@ -56,17 +69,29 @@ npm install
 
 ---
 
-### 4. Inicie o servidor
+### 3. Inicie o servidor
 
 ```bash
 npm start
 ```
 
-O servidor irá rodar em:
+O servidor estará disponível em:
 
 ```
 http://localhost:3000
 ```
+
+---
+
+## 🌐 Rodando o Frontend
+
+Abra o arquivo:
+
+```
+frontend/index.html
+```
+
+Ou use uma extensão como **Live Server** no VS Code.
 
 ---
 
@@ -126,8 +151,9 @@ npm test
 
 ## 💡 Observações
 
-* Certifique-se de rodar os comandos dentro da pasta `backend`
-* O frontend deve consumir a API em `http://localhost:3000`
+* Sempre execute o backend dentro da pasta `backend`
+* O frontend consome a API em `http://localhost:3000`
+* Certifique-se que o backend esteja rodando antes de abrir o frontend
 
 ---
 
